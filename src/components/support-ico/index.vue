@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~common/scss/mixin";
+@import "~common/scss/mixin.scss";
 
 .support-ico {
   display: inline-block;
