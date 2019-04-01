@@ -1,5 +1,5 @@
 <template>
-  <span class="supports-ico" :class="iconCls"></span>
+  <span class="support-ico" :class="iconCls"></span>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
       @include bg-image('discount_4');
     }
     &.gurantee {
-      @include bg-image('gurantee_4');
+      @include bg-image('guarantee_4');
     }
     &.invoice {
       @include bg-image('invoice_4');
@@ -65,7 +65,7 @@ export default {
       @include bg-image('discount_3');
     }
     &.gurantee {
-      @include bg-image('gurantee_3');
+      @include bg-image('guarantee_3');
     }
     &.invoice {
       @include bg-image('invoice_3');
@@ -85,7 +85,7 @@ export default {
       @include bg-image('discount_2');
     }
     &.gurantee {
-      @include bg-image('gurantee_2');
+      @include bg-image('guarantee_2');
     }
     &.invoice {
       @include bg-image('invoice_2');
@@ -105,7 +105,7 @@ export default {
       @include bg-image('discount_1');
     }
     &.gurantee {
-      @include bg-image('gurantee_1');
+      @include bg-image('guarantee_1');
     }
     &.invoice {
       @include bg-image('invoice_1');
