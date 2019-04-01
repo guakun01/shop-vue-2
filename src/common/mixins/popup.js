@@ -13,6 +13,7 @@ export default {
       this.$emit(EVENT_SHOW)
     },
     hide() {
+      this.visible = false
       this.$emit(EVENT_HIDE)
     }
   }
