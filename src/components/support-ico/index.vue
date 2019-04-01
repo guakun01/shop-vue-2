@@ -35,8 +35,9 @@ export default {
   display: inline-block;
   background-repeat: no-repeat;
   .icon-4 {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
     &.decrease {
       @include bg-image('decrease_4');
     }
@@ -56,6 +57,7 @@ export default {
   .icon-3 {
     width: 12px;
     height: 12px;
+    background-size: 12px 12px;
     &.decrease {
       @include bg-image('decrease_3');
     }
@@ -73,8 +75,9 @@ export default {
     }
   }
   .icon-2 {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
     &.decrease {
       @include bg-image('decrease_2');
     }
@@ -94,6 +97,7 @@ export default {
   .icon-1 {
     width: 12px;
     height: 12px;
+    background-size: 12px 12px;
     &.decrease {
       @include bg-image('decrease_1');
     }
