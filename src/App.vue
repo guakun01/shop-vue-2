@@ -6,12 +6,14 @@
 
 <script>
 import GHeader from 'components/g-header'
+import HeaderDetail from 'components/header-detail'
 import { getSeller } from 'api'
 
 export default {
   name: 'app',
   components: {
     GHeader,
+    HeaderDetail,
   },
   data() {
     return {

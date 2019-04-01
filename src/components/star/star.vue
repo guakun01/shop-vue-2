@@ -6,10 +6,10 @@
 </template>
 
 <script>
-const LENGTH = 5;
-const CLS_ON = 'on';
-const CLS_HALF = 'half';
-const CLS_OFF = 'off';
+const LENGTH = 5
+const CLS_ON = 'on'
+const CLS_HALF = 'half'
+const CLS_OFF = 'off'
 
 export default {
   name: 'GStar',
@@ -25,27 +25,27 @@ export default {
   },
   computed: {
     starType() {
-      return 'star-' + this.size;
+      return 'star-' + this.size
     },
     itemClasses() {
-      let result = [];
+      let result = []
       // 向下 0.5 取整
-      let score = Math.floor(this.score * 2) / 2;
-      let hasDecimal = score % 1 !== 0;
-      let integer = Math.floor(score);
+      let score = Math.floor(this.score * 2) / 2
+      let hasDecimal = score % 1 !== 0
+      let integer = Math.floor(score)
       for (let i = 0; i < integer; i++) {
-        result.push(CLS_ON);
+        result.push(CLS_ON)
       }
       if (hasDecimal) {
-        result.push(CLS_HALF);
+        result.push(CLS_HALF)
       }
       while (result.length < LENGTH) {
-        result.push(CLS_OFF);
+        result.push(CLS_OFF)
       }
-      return result;
+      return result
     }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +53,7 @@ export default {
 .star {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   .star-item {
     background-repeat: no-repeat;
   }
