@@ -18,14 +18,8 @@
         @scroll=onScroll
         :options=slideOptions
         >
-        <cube-slide-item>
-          <goods></goods>
-        </cube-slide-item>
-        <cube-slide-item>
-          <ratings></ratings>
-        </cube-slide-item>
-        <cube-slide-item>
-          <seller></seller>
+        <cube-slide-item v-for="(tab, index) in tabs" :key=index>
+          <component :is=tab.component :data=tab.data></component>
         </cube-slide-item>
       </cube-slide>
     </div>
@@ -33,25 +27,19 @@
 </template>
 
 <script>
-import Goods from '../goods'
-import Seller from '../seller'
-import Ratings from '../ratings'
-
 export default {
   name: 'GTab',
-  components: {
-    Goods,
-    Seller,
-    Ratings,
+  props: {
+    tabs: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
   },
   data() {
     return {
       index: 0,
-      tabs: [
-        { label: '商品' },
-        { label: '评价' },
-        { label: '商家' },
-      ],
       slideOptions: {
         listenScroll: true,
         probeType: 3,
