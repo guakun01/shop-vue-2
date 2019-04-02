@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <g-header :seller="seller"></g-header>
-    <g-tab></g-tab>
+    <div class="tab-wrapper">
+      <g-tab></g-tab>
+    </div>
   </div>
 </template>
 
@@ -36,4 +38,13 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  .tab-wrapper {
+    position: fixed;
+    top: 136px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
 </style>

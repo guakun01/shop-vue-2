@@ -2,9 +2,11 @@
   <div class="g-tab">
     <cube-tab-bar
       :showSlider=true
+      :useTransition=false
       v-model=selectedLabel
       :data=tabs
-      ref=tabBar></cube-tab-bar>
+      ref=tabBar
+      class="border-bottom-1px"></cube-tab-bar>
     <div class="slide-wrapper">
       <cube-slide
         :loop=false
@@ -12,6 +14,9 @@
         :show-dots=false
         :initial-index=index
         ref=slide
+        @change=onChange
+        @scroll=onScroll
+        :options=slideOptions
         >
         <cube-slide-item>
           <goods></goods>
@@ -47,6 +52,11 @@ export default {
         { label: '评价' },
         { label: '商家' },
       ],
+      slideOptions: {
+        listenScroll: true,
+        probeType: 3,
+        directionLockThreshold: 0,
+      }
     }
   },
   computed: {
@@ -60,6 +70,17 @@ export default {
         })
       }
     }
+  },
+  methods: {
+    onChange(current) {
+      this.index = current
+    },
+    onScroll(pos) {
+      const tabBarWidth = this.$refs.tabBar.$el.clientWidth
+      const slideWidth = this.$refs.slide.slide.scrollerWidth
+      const transform = -pos.x / slideWidth * tabBarWidth
+      this.$refs.tabBar.setSliderTransform(transform)
+    },
   }
 }
 </script>
@@ -69,14 +90,13 @@ export default {
 .g-tab {
   ::v-deep .cube-tab {
     padding: 10px 0;
-  } 
+  }
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 100%;
   .slide-wrapper {
     flex: 1;
     overflow: hidden;
   }
 }
-
 </style>
