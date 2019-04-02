@@ -2,7 +2,7 @@
   <div id="app">
     <g-header :seller="seller"></g-header>
     <div class="tab-wrapper">
-      <g-tab :tabs=tabs></g-tab>
+      <g-tab :tabs=tabs :initial-index=1></g-tab>
     </div>
   </div>
 </template>
